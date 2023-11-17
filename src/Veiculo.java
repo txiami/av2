@@ -1,4 +1,7 @@
+import java.text.DecimalFormat;
+
 public class Veiculo {
+    DecimalFormat df = new DecimalFormat("#.00");
     private String marca;
     private String modelo;
     private int ano;
@@ -34,11 +37,10 @@ public class Veiculo {
 
     @Override
     public String toString() {
-        return "Veiculo{" +
-                "marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", ano=" + ano +
-                ", diaria=" + diaria +
-                '}';
+        return "Veiculo \n" +
+                "Marca= " + getMarca() + "\n" +
+                "Modelo= " + getModelo() + "\n" +
+                "Ano= " + getAno() +"\n" +
+                "Diaria= R$ " + df.format(getDiaria());
     }
 }

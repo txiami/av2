@@ -1,7 +1,10 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Principal{
     public static void main(String[] args) {
+
+        DecimalFormat df = new DecimalFormat("#.00");
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Digite os detalhes do Carro Sedan:");
@@ -36,8 +39,12 @@ public class Principal{
         Locacao locacaoSedan = new Locacao(sedan, dias);
         Locacao locacaoSUV = new Locacao(suv, dias);
 
-        System.out.println("O valor da locação para o Carro Sedan é: " + locacaoSedan.calcularValorLocacao());
-        System.out.println("O valor da locação para o Carro SUV é: " + locacaoSUV.calcularValorLocacao());
+
+        System.out.println(sedan.toString());
+        System.out.printf("\nValor da locação do Sedan: R$" + df.format(locacaoSedan.calcularValorLocacao()) + "\n\n\n");
+
+        System.out.println(suv.toString());
+        System.out.printf("\nValor da locação do Sedan: R$" + df.format(locacaoSUV.calcularValorLocacao())+ "\n\n\n");
 
         scanner.close();
     }
