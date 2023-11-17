@@ -10,4 +10,5 @@ public class Locacao {
     public double calcularValorLocacao() {
         return objAluguel.getDiaria() * dias;
     }
+
 }
